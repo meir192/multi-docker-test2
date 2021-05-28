@@ -8,7 +8,7 @@ before_install:
   - docker build -t meir192/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true meir192/react-test-x npm test
+  - docker run -e CI=true meir192/react-test npm test
 
 after_success:
   - docker build -t meir192/mmulti-client ./client
